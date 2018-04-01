@@ -20,10 +20,8 @@ namespace lift_3 {
 	/// </summary>
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
-	public:
-		Image ^img, ^img2; //картинка
-	public:
-	public:
+		String^ fileName = "logfile.txt";
+		System::IO::StreamWriter^ sw = gcnew System::IO::StreamWriter(fileName);
 		Point imgPoint, imgPoint2; //точки вывода картинок лифтов
 		bool StateDefined, MoveDefined, StopFlag, OpenedFlag, StopNext,
 			StateDefined2, MoveDefined2, StopFlag2, OpenedFlag2, StopNext2;
@@ -64,6 +62,11 @@ namespace lift_3 {
 		int *CallCar = new int[9], *CallUp = new int[9], *CallDown = new int[9], *CallCar2 = new int[9],
 			*FloorQueue = new int[9];
 		PassengersStruct *Passengers = new PassengersStruct[63];
+	public:
+		Image ^img, ^img2; //картинка
+	public:
+	public:
+		
 	private: System::Windows::Forms::Button^  button1;
 	private: System::Windows::Forms::Button^  button2;
 	private: System::Windows::Forms::Button^  button3;
@@ -140,8 +143,8 @@ namespace lift_3 {
 	private: System::Windows::Forms::Label^  label16;
 	private: System::Windows::Forms::Label^  label18;
 	private: System::Windows::Forms::Label^  label21;
-	private: System::Windows::Forms::TextBox^  textBox24;
-	private: System::Windows::Forms::TextBox^  textBox25;
+
+
 	private: System::Windows::Forms::CheckBox^  checkBox1;
 	private: System::Windows::Forms::CheckBox^  checkBox2;
 	private: System::Windows::Forms::CheckBox^  checkBox3;
@@ -206,9 +209,10 @@ namespace lift_3 {
 	private: System::Windows::Forms::CheckBox^  checkBox62;
 	private: System::Windows::Forms::CheckBox^  checkBox63;
 	private: System::Windows::Forms::TextBox^  textBox26;
-	private: System::Windows::Forms::Label^  label24;
-	private: System::Windows::Forms::Label^  label25;
+
+
 	private: System::Windows::Forms::TextBox^  textBox27;
+private: System::Windows::Forms::Button^  button36;
 	private: System::Windows::Forms::Button^  button9;
 	public:
 	public:
@@ -341,8 +345,6 @@ namespace lift_3 {
 			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->label21 = (gcnew System::Windows::Forms::Label());
-			this->textBox24 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox25 = (gcnew System::Windows::Forms::TextBox());
 			this->checkBox1 = (gcnew System::Windows::Forms::CheckBox());
 			this->checkBox2 = (gcnew System::Windows::Forms::CheckBox());
 			this->checkBox3 = (gcnew System::Windows::Forms::CheckBox());
@@ -407,9 +409,8 @@ namespace lift_3 {
 			this->checkBox62 = (gcnew System::Windows::Forms::CheckBox());
 			this->checkBox63 = (gcnew System::Windows::Forms::CheckBox());
 			this->textBox26 = (gcnew System::Windows::Forms::TextBox());
-			this->label24 = (gcnew System::Windows::Forms::Label());
-			this->label25 = (gcnew System::Windows::Forms::Label());
 			this->textBox27 = (gcnew System::Windows::Forms::TextBox());
+			this->button36 = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// button1
@@ -1148,20 +1149,6 @@ namespace lift_3 {
 			this->label21->TabIndex = 88;
 			this->label21->Text = L"Направление";
 			// 
-			// textBox24
-			// 
-			this->textBox24->Location = System::Drawing::Point(172, 51);
-			this->textBox24->Name = L"textBox24";
-			this->textBox24->Size = System::Drawing::Size(20, 20);
-			this->textBox24->TabIndex = 100;
-			// 
-			// textBox25
-			// 
-			this->textBox25->Location = System::Drawing::Point(234, 51);
-			this->textBox25->Name = L"textBox25";
-			this->textBox25->Size = System::Drawing::Size(20, 20);
-			this->textBox25->TabIndex = 101;
-			// 
 			// checkBox1
 			// 
 			this->checkBox1->AutoSize = true;
@@ -1794,35 +1781,27 @@ namespace lift_3 {
 			// 
 			// textBox26
 			// 
-			this->textBox26->Location = System::Drawing::Point(476, 88);
+			this->textBox26->Location = System::Drawing::Point(170, 49);
 			this->textBox26->Name = L"textBox26";
-			this->textBox26->Size = System::Drawing::Size(33, 20);
+			this->textBox26->Size = System::Drawing::Size(22, 20);
 			this->textBox26->TabIndex = 165;
-			// 
-			// label24
-			// 
-			this->label24->AutoSize = true;
-			this->label24->Location = System::Drawing::Point(515, 91);
-			this->label24->Name = L"label24";
-			this->label24->Size = System::Drawing::Size(71, 13);
-			this->label24->TabIndex = 166;
-			this->label24->Text = L"Пассажиров";
-			// 
-			// label25
-			// 
-			this->label25->AutoSize = true;
-			this->label25->Location = System::Drawing::Point(725, 91);
-			this->label25->Name = L"label25";
-			this->label25->Size = System::Drawing::Size(71, 13);
-			this->label25->TabIndex = 168;
-			this->label25->Text = L"Пассажиров";
 			// 
 			// textBox27
 			// 
-			this->textBox27->Location = System::Drawing::Point(686, 88);
+			this->textBox27->Location = System::Drawing::Point(234, 49);
 			this->textBox27->Name = L"textBox27";
-			this->textBox27->Size = System::Drawing::Size(33, 20);
+			this->textBox27->Size = System::Drawing::Size(22, 20);
 			this->textBox27->TabIndex = 167;
+			// 
+			// button36
+			// 
+			this->button36->Location = System::Drawing::Point(694, 390);
+			this->button36->Name = L"button36";
+			this->button36->Size = System::Drawing::Size(75, 42);
+			this->button36->TabIndex = 168;
+			this->button36->Text = L"Сохранить лог и выйти";
+			this->button36->UseVisualStyleBackColor = true;
+			this->button36->Click += gcnew System::EventHandler(this, &MyForm::button36_Click);
 			// 
 			// MyForm
 			// 
@@ -1831,9 +1810,8 @@ namespace lift_3 {
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
 			this->ClientSize = System::Drawing::Size(848, 604);
-			this->Controls->Add(this->label25);
+			this->Controls->Add(this->button36);
 			this->Controls->Add(this->textBox27);
-			this->Controls->Add(this->label24);
 			this->Controls->Add(this->textBox26);
 			this->Controls->Add(this->checkBox57);
 			this->Controls->Add(this->checkBox58);
@@ -1898,8 +1876,6 @@ namespace lift_3 {
 			this->Controls->Add(this->checkBox4);
 			this->Controls->Add(this->checkBox2);
 			this->Controls->Add(this->checkBox1);
-			this->Controls->Add(this->textBox25);
-			this->Controls->Add(this->textBox24);
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->label10);
 			this->Controls->Add(this->label11);
@@ -2212,8 +2188,9 @@ namespace lift_3 {
 		timer2->Tick += gcnew EventHandler(this, &MyForm::timer2_Tick);
 	}
 
-			 //обработчик тика первого таймера
-	private: System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e) {
+	private: 
+		//обработчик тика первого таймера
+		System::Void timer1_Tick(System::Object^  sender, System::EventArgs^  e) {
 		Random^ rand = gcnew Random();
 
 		//принятие решения
@@ -2258,7 +2235,13 @@ namespace lift_3 {
 			if (CloseTime == 0 && OpenFlag == -1) OpenFlag = 0;
 
 			StopTime--;
-			if (StopTime <= 0) StopFlag = 0;
+			if (StopTime <= 0)
+			{
+				StopFlag = 0;
+				/*sw->Write(DateTime::Now);
+				sw->Write(" Лифт №1 остановился на этаже ");
+				sw->WriteLine(Floor.ToString());*/
+			}
 		}
 
 		//сброс флагов автоматов, начало нового шага
@@ -2272,7 +2255,17 @@ namespace lift_3 {
 		if (StopFlag)
 			for (i = 0; i < 63; i++)
 				if (Passengers[i].State == 2 && Passengers[i].DestinationFloor == Floor)
+				{
 					PassengersInCar--, Passengers[i].OriginFloor = 0, Passengers[i].State = 0;
+					sw->Write(DateTime::Now);
+					sw->Write(" Пассажир ");
+					sw->Write(i.ToString());
+					sw->Write(" вышел из лифта №1 на этаже ");
+					sw->WriteLine(Floor.ToString());
+					sw->Write(DateTime::Now);
+					sw->Write(" Пассажиров в лифте №1: ");
+					sw->WriteLine(PassengersInCar.ToString());
+				}
 
 		//вход пассажиров в лифт1
 		if (StopFlag && PassengersInCar < 6)
@@ -2280,7 +2273,19 @@ namespace lift_3 {
 			{
 				if (PassengersInCar >= 6) break;
 				if (Passengers[i].State == 1 && Passengers[i].OriginFloor == Floor && PassengersInCar < 6)
+				{
 					Passengers[i].State = 2, PassengersInCar++, CallCar[Passengers[i].DestinationFloor] = 1;
+					sw->Write(DateTime::Now);
+					sw->Write(" Пассажир ");
+					sw->Write(i.ToString());
+					sw->Write(" вошел в лифт №1 на этаже ");
+					sw->Write(Floor.ToString());
+					sw->Write(" и вызвал лифт на этаж ");
+					sw->WriteLine(Passengers[i].DestinationFloor.ToString());
+					sw->Write(DateTime::Now);
+					sw->Write(" Пассажиров в лифте №1: ");
+					sw->WriteLine(PassengersInCar.ToString());
+				}
 			}
 
 		//обработка текстбоксов
@@ -2296,8 +2301,6 @@ namespace lift_3 {
 		this->textBox21->Text = TimerInterval1.ToString();
 		this->textBox22->Text = TimerInterval2.ToString();
 		this->textBox23->Text = TimerInterval3.ToString();
-		this->textBox24->Text = Floor.ToString();
-		this->textBox25->Text = Floor2.ToString();
 		this->textBox26->Text = PassengersInCar.ToString();
 		this->textBox27->Text = PassengersInCar2.ToString();
 		this->textBox17->Text = State2.ToString();
@@ -2517,14 +2520,16 @@ namespace lift_3 {
 		this->Invalidate();
 	}
 
-			 //отрисовка первого лифта
-	private: System::Void MyForm_Paint(System::Object^  sender,
+	private: 
+		//отрисовка первого лифта
+		System::Void MyForm_Paint(System::Object^  sender,
 		System::Windows::Forms::PaintEventArgs^  e) {
 		e->Graphics->DrawImage(img, imgPoint)/*.BringToFront()*/;
 	}
-
-			 //обработка тика второго таймера - аналогично первой
-	private: System::Void timer2_Tick(System::Object^  sender, System::EventArgs^  e) {
+		 
+	private: 
+		//обработка тика второго таймера - аналогично первой
+		System::Void timer2_Tick(System::Object^  sender, System::EventArgs^  e) {
 		if (!StateDefined2)
 		{
 			StateDefine2();
@@ -2562,7 +2567,13 @@ namespace lift_3 {
 			if (CloseTime2 == 0 && OpenFlag2 == -1) OpenFlag2 = 0;
 
 			StopTime2--;
-			if (StopTime2 <= 0) StopFlag2 = 0;
+			if (StopTime2 <= 0)
+			{
+				StopFlag2 = 0;
+				/*sw->Write(DateTime::Now);
+				sw->Write(" Лифт №2 остановился на этаже ");
+				sw->WriteLine(Floor2.ToString());*/
+			}
 		}
 
 		if (Time2 <= 0)
@@ -2575,15 +2586,37 @@ namespace lift_3 {
 		if (StopFlag)
 			for (i = 0; i < 63; i++)
 				if (Passengers[i].State == 3 && Passengers[i].DestinationFloor == Floor2)
+				{
 					PassengersInCar2--, Passengers[i].OriginFloor = 0, Passengers[i].State = 0;
+					sw->Write(DateTime::Now);
+					sw->Write(" Пассажир ");
+					sw->Write(i.ToString());
+					sw->Write(" вышел из лифта №2 на этаже ");
+					sw->WriteLine(Floor2.ToString());
+					sw->Write(DateTime::Now);
+					sw->Write(" Пассажиров в лифте №2: ");
+					sw->WriteLine(PassengersInCar2.ToString());
+				}
 
 		//вход пассажиров в лифт2
 		if (StopFlag2 && PassengersInCar2 < 6)
 			for (i = 0; i < 63; i++)
 			{
 				if (PassengersInCar2 >= 6) break;
-				if (Passengers[i].State == 1 && Passengers[i].OriginFloor == Floor && PassengersInCar2 < 6)
+				if (Passengers[i].State == 1 && Passengers[i].OriginFloor == Floor2 && PassengersInCar2 < 6)
+				{
 					Passengers[i].State = 3, PassengersInCar2++, CallCar2[Passengers[i].DestinationFloor] = 1;
+					sw->Write(DateTime::Now);
+					sw->Write(" Пассажир ");
+					sw->Write(i.ToString());
+					sw->Write(" вошел в лифт №2 на этаже ");
+					sw->Write(Floor2.ToString());
+					sw->Write(" и вызвал лифт на этаж ");
+					sw->WriteLine(Passengers[i].DestinationFloor.ToString());
+					sw->Write(DateTime::Now);
+					sw->Write(" Пассажиров в лифте №2: ");
+					sw->WriteLine(PassengersInCar2.ToString());
+				}
 			}
 
 		this->Invalidate();
@@ -2707,6 +2740,8 @@ namespace lift_3 {
 		timer3->Interval = TimerInterval3;
 		timer3->Enabled = true;
 		timer3->Tick += gcnew EventHandler(this, &MyForm::timer3_Tick);
+		sw->Write(DateTime::Now);
+		sw->WriteLine(" Начат журнал событий авторежима. Вывод в logfile.txt");
 	}
 
 			 //обработка тика таймера авторежима
@@ -2729,6 +2764,25 @@ namespace lift_3 {
 			if (RandVal >= 56 && RandVal <= 62) Passengers[RandVal].OriginFloor = 0;
 			if (Passengers[RandVal].DestinationFloor == Passengers[RandVal].OriginFloor)
 				Passengers[RandVal].State = 0, Passengers[RandVal].OriginFloor = 0;
+			else
+			{
+				sw->Write(DateTime::Now);
+				sw->Write(" Пассажир ");
+				sw->Write(RandVal.ToString());
+				sw->Write(" размещен на этаж ");
+				sw->Write(Passengers[RandVal].OriginFloor.ToString());
+				sw->Write(" с этажом назначения ");
+				sw->WriteLine(Passengers[RandVal].DestinationFloor.ToString());
+			}
+
+			//sw->WriteLine("A text file is born!");
+			//sw->Write("You can use WriteLine");
+			//sw->WriteLine("...or just Write");
+			//sw->WriteLine("and do {0} output too.", "formatted");
+			//sw->WriteLine("You can also send non-text objects:");
+			//sw->WriteLine(DateTime::Now);
+			////sw->Close();
+			//Console::WriteLine("a new file ('{0}') has been written", fileName);
 		}
 
 		//вызов лифтов пассажирами на этажах
@@ -2764,5 +2818,9 @@ namespace lift_3 {
 			 //	this->textBox19->Text = RandQueue.ToString();
 			 //	this->textBox20->Text = RandFloor.ToString();
 			 //}
-	};
+	private: System::Void button36_Click(System::Object^  sender, System::EventArgs^  e) {
+		sw->Close();
+		Application::Exit();
+	}
+};
 }
