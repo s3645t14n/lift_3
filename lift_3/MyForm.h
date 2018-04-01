@@ -2174,10 +2174,13 @@ private: System::Windows::Forms::Button^  button36;
 		this->Paint += gcnew PaintEventHandler(this, &MyForm::MyForm_Paint2);
 		Timer ^ timer1 = gcnew Timer(); //таймер первого лифта
 		Timer ^ timer2 = gcnew Timer(); //таймер второго лифта
+		Timer ^ timer0 = gcnew Timer(); //таймер интерфейса
 		timer1->Interval = TimerInterval1;
 		timer2->Interval = TimerInterval1;
+		timer0->Interval = 10;
 		timer1->Enabled = true;
 		timer2->Enabled = true;
+		timer0->Enabled = true;
 		for (i = 0; i < 63; i++) //инициализация структуры данных с пассажирами
 			Passengers[i].ID = i,
 			Passengers[i].State = 0,
@@ -2186,6 +2189,7 @@ private: System::Windows::Forms::Button^  button36;
 			Passengers[i].DestinationFloor = 0;
 		timer1->Tick += gcnew EventHandler(this, &MyForm::timer1_Tick);
 		timer2->Tick += gcnew EventHandler(this, &MyForm::timer2_Tick);
+		timer0->Tick += gcnew EventHandler(this, &MyForm::timer0_Tick);
 	}
 
 	private: 
@@ -2238,9 +2242,9 @@ private: System::Windows::Forms::Button^  button36;
 			if (StopTime <= 0)
 			{
 				StopFlag = 0;
-				/*sw->Write(DateTime::Now);
+				sw->Write(DateTime::Now);
 				sw->Write(" Лифт №1 остановился на этаже ");
-				sw->WriteLine(Floor.ToString());*/
+				sw->WriteLine(Floor.ToString());
 			}
 		}
 
@@ -2287,235 +2291,6 @@ private: System::Windows::Forms::Button^  button36;
 					sw->WriteLine(PassengersInCar.ToString());
 				}
 			}
-
-		//обработка текстбоксов
-		this->textBox1->Text = State.ToString();
-		this->textBox2->Text = Time.ToString();
-		this->textBox3->Text = Speed.ToString();
-		this->textBox4->Text = Floor.ToString();
-		this->textBox5->Text = StateDefined.ToString();
-		this->textBox6->Text = MoveDefined.ToString();
-		this->textBox7->Text = StopNextTime.ToString();
-		this->textBox8->Text = StopTime.ToString();
-		this->textBox18->Text = imgPoint.Y.ToString();
-		this->textBox21->Text = TimerInterval1.ToString();
-		this->textBox22->Text = TimerInterval2.ToString();
-		this->textBox23->Text = TimerInterval3.ToString();
-		this->textBox26->Text = PassengersInCar.ToString();
-		this->textBox27->Text = PassengersInCar2.ToString();
-		this->textBox17->Text = State2.ToString();
-		this->textBox16->Text = Time2.ToString();
-		this->textBox15->Text = Speed2.ToString();
-		this->textBox14->Text = Floor2.ToString();
-		this->textBox13->Text = StateDefined2.ToString();
-		this->textBox12->Text = MoveDefined2.ToString();
-		this->textBox11->Text = StopNextTime2.ToString();
-		this->textBox10->Text = StopTime2.ToString();
-		this->textBox9->Text = imgPoint2.Y.ToString();
-
-		//обработка кнопок первого лифта
-		if (CallCar[0] == 1) button9->BackColor = Color::IndianRed;
-		else button9->BackColor = Color::LightGray;
-		if (CallCar[1] == 1) button8->BackColor = Color::IndianRed;
-		else button8->BackColor = Color::LightGray;
-		if (CallCar[2] == 1) button7->BackColor = Color::IndianRed;
-		else button7->BackColor = Color::LightGray;
-		if (CallCar[3] == 1) button6->BackColor = Color::IndianRed;
-		else button6->BackColor = Color::LightGray;
-		if (CallCar[4] == 1) button5->BackColor = Color::IndianRed;
-		else button5->BackColor = Color::LightGray;
-		if (CallCar[5] == 1) button4->BackColor = Color::IndianRed;
-		else button4->BackColor = Color::LightGray;
-		if (CallCar[6] == 1) button3->BackColor = Color::IndianRed;
-		else button3->BackColor = Color::LightGray;
-		if (CallCar[7] == 1) button2->BackColor = Color::IndianRed;
-		else button2->BackColor = Color::LightGray;
-		if (CallCar[8] == 1) button1->BackColor = Color::IndianRed;
-		else button1->BackColor = Color::LightGray;
-
-		//обработка кнопок второго лифта
-		if (CallCar2[0] == 1) button10->BackColor = Color::IndianRed;
-		else button10->BackColor = Color::LightGray;
-		if (CallCar2[1] == 1) button27->BackColor = Color::IndianRed;
-		else button27->BackColor = Color::LightGray;
-		if (CallCar2[2] == 1) button28->BackColor = Color::IndianRed;
-		else button28->BackColor = Color::LightGray;
-		if (CallCar2[3] == 1) button29->BackColor = Color::IndianRed;
-		else button29->BackColor = Color::LightGray;
-		if (CallCar2[4] == 1) button30->BackColor = Color::IndianRed;
-		else button30->BackColor = Color::LightGray;
-		if (CallCar2[5] == 1) button31->BackColor = Color::IndianRed;
-		else button31->BackColor = Color::LightGray;
-		if (CallCar2[6] == 1) button32->BackColor = Color::IndianRed;
-		else button32->BackColor = Color::LightGray;
-		if (CallCar2[7] == 1) button33->BackColor = Color::IndianRed;
-		else button33->BackColor = Color::LightGray;
-		if (CallCar2[8] == 1) button34->BackColor = Color::IndianRed;
-		else button34->BackColor = Color::LightGray;
-
-		//обработка кнопок вызова вверх
-		if (CallUp[0] == 1) button26->BackColor = Color::IndianRed;
-		else button26->BackColor = Color::White;
-		if (CallUp[1] == 1) button24->BackColor = Color::IndianRed;
-		else button24->BackColor = Color::White;
-		if (CallUp[2] == 1) button22->BackColor = Color::IndianRed;
-		else button22->BackColor = Color::White;
-		if (CallUp[3] == 1) button20->BackColor = Color::IndianRed;
-		else button20->BackColor = Color::White;
-		if (CallUp[4] == 1) button18->BackColor = Color::IndianRed;
-		else button18->BackColor = Color::White;
-		if (CallUp[5] == 1) button16->BackColor = Color::IndianRed;
-		else button16->BackColor = Color::White;
-		if (CallUp[6] == 1) button14->BackColor = Color::IndianRed;
-		else button14->BackColor = Color::White;
-		if (CallUp[7] == 1) button12->BackColor = Color::IndianRed;
-		else button12->BackColor = Color::White;
-
-		//обработка кнопок вызова вниз
-		if (CallDown[8] == 1) button11->BackColor = Color::IndianRed;
-		else button11->BackColor = Color::White;
-		if (CallDown[1] == 1) button25->BackColor = Color::IndianRed;
-		else button25->BackColor = Color::White;
-		if (CallDown[2] == 1) button23->BackColor = Color::IndianRed;
-		else button23->BackColor = Color::White;
-		if (CallDown[3] == 1) button21->BackColor = Color::IndianRed;
-		else button21->BackColor = Color::White;
-		if (CallDown[4] == 1) button19->BackColor = Color::IndianRed;
-		else button19->BackColor = Color::White;
-		if (CallDown[5] == 1) button17->BackColor = Color::IndianRed;
-		else button17->BackColor = Color::White;
-		if (CallDown[6] == 1) button15->BackColor = Color::IndianRed;
-		else button15->BackColor = Color::White;
-		if (CallDown[7] == 1) button13->BackColor = Color::IndianRed;
-		else button13->BackColor = Color::White;
-
-		//обработка чекбоксов
-		if (Passengers[0].State == 1) this->checkBox1->Checked = true;
-		else this->checkBox1->Checked = false;
-		if (Passengers[1].State == 1) this->checkBox2->Checked = true;
-		else this->checkBox2->Checked = false;
-		if (Passengers[2].State == 1) this->checkBox3->Checked = true;
-		else this->checkBox3->Checked = false;
-		if (Passengers[3].State == 1) this->checkBox4->Checked = true;
-		else this->checkBox4->Checked = false;
-		if (Passengers[4].State == 1) this->checkBox5->Checked = true;
-		else this->checkBox5->Checked = false;
-		if (Passengers[5].State == 1) this->checkBox6->Checked = true;
-		else this->checkBox6->Checked = false;
-		if (Passengers[6].State == 1) this->checkBox7->Checked = true;
-		else this->checkBox7->Checked = false;
-		if (Passengers[7].State == 1) this->checkBox8->Checked = true;
-		else this->checkBox8->Checked = false;
-		if (Passengers[8].State == 1) this->checkBox9->Checked = true;
-		else this->checkBox9->Checked = false;
-		if (Passengers[9].State == 1) this->checkBox10->Checked = true;
-		else this->checkBox10->Checked = false;
-		if (Passengers[10].State == 1) this->checkBox11->Checked = true;
-		else this->checkBox11->Checked = false;
-		if (Passengers[11].State == 1) this->checkBox12->Checked = true;
-		else this->checkBox12->Checked = false;
-		if (Passengers[12].State == 1) this->checkBox13->Checked = true;
-		else this->checkBox13->Checked = false;
-		if (Passengers[13].State == 1) this->checkBox14->Checked = true;
-		else this->checkBox14->Checked = false;
-		if (Passengers[14].State == 1) this->checkBox15->Checked = true;
-		else this->checkBox15->Checked = false;
-		if (Passengers[15].State == 1) this->checkBox16->Checked = true;
-		else this->checkBox16->Checked = false;
-		if (Passengers[16].State == 1) this->checkBox17->Checked = true;
-		else this->checkBox17->Checked = false;
-		if (Passengers[17].State == 1) this->checkBox18->Checked = true;
-		else this->checkBox18->Checked = false;
-		if (Passengers[18].State == 1) this->checkBox19->Checked = true;
-		else this->checkBox19->Checked = false;
-		if (Passengers[19].State == 1) this->checkBox20->Checked = true;
-		else this->checkBox20->Checked = false;
-		if (Passengers[20].State == 1) this->checkBox21->Checked = true;
-		else this->checkBox21->Checked = false;
-		if (Passengers[21].State == 1) this->checkBox22->Checked = true;
-		else this->checkBox22->Checked = false;
-		if (Passengers[22].State == 1) this->checkBox23->Checked = true;
-		else this->checkBox23->Checked = false;
-		if (Passengers[23].State == 1) this->checkBox24->Checked = true;
-		else this->checkBox24->Checked = false;
-		if (Passengers[24].State == 1) this->checkBox25->Checked = true;
-		else this->checkBox25->Checked = false;
-		if (Passengers[25].State == 1) this->checkBox26->Checked = true;
-		else this->checkBox26->Checked = false;
-		if (Passengers[26].State == 1) this->checkBox27->Checked = true;
-		else this->checkBox27->Checked = false;
-		if (Passengers[27].State == 1) this->checkBox28->Checked = true;
-		else this->checkBox28->Checked = false;
-		if (Passengers[28].State == 1) this->checkBox29->Checked = true;
-		else this->checkBox29->Checked = false;
-		if (Passengers[29].State == 1) this->checkBox30->Checked = true;
-		else this->checkBox30->Checked = false;
-		if (Passengers[30].State == 1) this->checkBox31->Checked = true;
-		else this->checkBox31->Checked = false;
-		if (Passengers[31].State == 1) this->checkBox32->Checked = true;
-		else this->checkBox32->Checked = false;
-		if (Passengers[32].State == 1) this->checkBox33->Checked = true;
-		else this->checkBox33->Checked = false;
-		if (Passengers[33].State == 1) this->checkBox34->Checked = true;
-		else this->checkBox34->Checked = false;
-		if (Passengers[34].State == 1) this->checkBox35->Checked = true;
-		else this->checkBox35->Checked = false;
-		if (Passengers[35].State == 1) this->checkBox36->Checked = true;
-		else this->checkBox36->Checked = false;
-		if (Passengers[36].State == 1) this->checkBox37->Checked = true;
-		else this->checkBox37->Checked = false;
-		if (Passengers[37].State == 1) this->checkBox38->Checked = true;
-		else this->checkBox38->Checked = false;
-		if (Passengers[38].State == 1) this->checkBox39->Checked = true;
-		else this->checkBox39->Checked = false;
-		if (Passengers[39].State == 1) this->checkBox40->Checked = true;
-		else this->checkBox40->Checked = false;
-		if (Passengers[40].State == 1) this->checkBox41->Checked = true;
-		else this->checkBox41->Checked = false;
-		if (Passengers[41].State == 1) this->checkBox42->Checked = true;
-		else this->checkBox42->Checked = false;
-		if (Passengers[42].State == 1) this->checkBox43->Checked = true;
-		else this->checkBox43->Checked = false;
-		if (Passengers[43].State == 1) this->checkBox44->Checked = true;
-		else this->checkBox44->Checked = false;
-		if (Passengers[44].State == 1) this->checkBox45->Checked = true;
-		else this->checkBox45->Checked = false;
-		if (Passengers[45].State == 1) this->checkBox46->Checked = true;
-		else this->checkBox46->Checked = false;
-		if (Passengers[46].State == 1) this->checkBox47->Checked = true;
-		else this->checkBox47->Checked = false;
-		if (Passengers[47].State == 1) this->checkBox48->Checked = true;
-		else this->checkBox48->Checked = false;
-		if (Passengers[48].State == 1) this->checkBox49->Checked = true;
-		else this->checkBox49->Checked = false;
-		if (Passengers[49].State == 1) this->checkBox50->Checked = true;
-		else this->checkBox50->Checked = false;
-		if (Passengers[50].State == 1) this->checkBox51->Checked = true;
-		else this->checkBox51->Checked = false;
-		if (Passengers[51].State == 1) this->checkBox52->Checked = true;
-		else this->checkBox52->Checked = false;
-		if (Passengers[52].State == 1) this->checkBox53->Checked = true;
-		else this->checkBox53->Checked = false;
-		if (Passengers[53].State == 1) this->checkBox54->Checked = true;
-		else this->checkBox54->Checked = false;
-		if (Passengers[54].State == 1) this->checkBox55->Checked = true;
-		else this->checkBox55->Checked = false;
-		if (Passengers[55].State == 1) this->checkBox56->Checked = true;
-		else this->checkBox56->Checked = false;
-		if (Passengers[56].State == 1) this->checkBox57->Checked = true;
-		else this->checkBox57->Checked = false;
-		if (Passengers[57].State == 1) this->checkBox58->Checked = true;
-		else this->checkBox58->Checked = false;
-		if (Passengers[58].State == 1) this->checkBox59->Checked = true;
-		else this->checkBox59->Checked = false;
-		if (Passengers[59].State == 1) this->checkBox60->Checked = true;
-		else this->checkBox60->Checked = false;
-		if (Passengers[60].State == 1) this->checkBox61->Checked = true;
-		else this->checkBox61->Checked = false;
-		if (Passengers[61].State == 1) this->checkBox62->Checked = true;
-		else this->checkBox62->Checked = false;
-		if (Passengers[62].State == 1) this->checkBox63->Checked = true;
-		else this->checkBox63->Checked = false;
 
 		this->Invalidate();
 	}
@@ -2570,9 +2345,9 @@ private: System::Windows::Forms::Button^  button36;
 			if (StopTime2 <= 0)
 			{
 				StopFlag2 = 0;
-				/*sw->Write(DateTime::Now);
+				sw->Write(DateTime::Now);
 				sw->Write(" Лифт №2 остановился на этаже ");
-				sw->WriteLine(Floor2.ToString());*/
+				sw->WriteLine(Floor2.ToString());
 			}
 		}
 
@@ -2627,7 +2402,7 @@ private: System::Windows::Forms::Button^  button36;
 		e->Graphics->DrawImage(img2, imgPoint2);
 	}
 
-			 //обработка нажатия кнопок вызова пользователем
+	//обработка нажатия кнопок вызова пользователем
 	private: System::Void button9_Click(System::Object^  sender, System::EventArgs^  e) {
 		if (Floor != 0) CallCar[0] = 1;
 	}
@@ -2733,7 +2508,7 @@ private: System::Windows::Forms::Button^  button36;
 		if (Floor != 7) CallUp[7] = 1;
 	}
 
-			 //обработка кнопки авторежима
+	//обработка кнопки авторежима
 	private: System::Void button35_Click(System::Object^  sender, System::EventArgs^  e) {
 		button35->BackColor = Color::IndianRed;
 		Timer ^ timer3 = gcnew Timer();
@@ -2744,7 +2519,7 @@ private: System::Windows::Forms::Button^  button36;
 		sw->WriteLine(" Начат журнал событий авторежима. Вывод в logfile.txt");
 	}
 
-			 //обработка тика таймера авторежима
+	//обработка тика таймера авторежима
 	private: System::Void timer3_Tick(System::Object^  sender, System::EventArgs^  e) {
 		Random^ rand = gcnew Random();
 		RandVal = rand->Next(63);
@@ -2818,6 +2593,240 @@ private: System::Windows::Forms::Button^  button36;
 			 //	this->textBox19->Text = RandQueue.ToString();
 			 //	this->textBox20->Text = RandFloor.ToString();
 			 //}
+
+			 private: System::Void timer0_Tick(System::Object^  sender, System::EventArgs^  e) {
+				 //обработка текстбоксов
+				 this->textBox1->Text = State.ToString();
+				 this->textBox2->Text = Time.ToString();
+				 this->textBox3->Text = Speed.ToString();
+				 this->textBox4->Text = Floor.ToString();
+				 this->textBox5->Text = StateDefined.ToString();
+				 this->textBox6->Text = MoveDefined.ToString();
+				 this->textBox7->Text = StopNextTime.ToString();
+				 this->textBox8->Text = StopTime.ToString();
+				 this->textBox18->Text = imgPoint.Y.ToString();
+				 this->textBox21->Text = TimerInterval1.ToString();
+				 this->textBox22->Text = TimerInterval2.ToString();
+				 this->textBox23->Text = TimerInterval3.ToString();
+				 this->textBox26->Text = PassengersInCar.ToString();
+				 this->textBox27->Text = PassengersInCar2.ToString();
+				 this->textBox17->Text = State2.ToString();
+				 this->textBox16->Text = Time2.ToString();
+				 this->textBox15->Text = Speed2.ToString();
+				 this->textBox14->Text = Floor2.ToString();
+				 this->textBox13->Text = StateDefined2.ToString();
+				 this->textBox12->Text = MoveDefined2.ToString();
+				 this->textBox11->Text = StopNextTime2.ToString();
+				 this->textBox10->Text = StopTime2.ToString();
+				 this->textBox9->Text = imgPoint2.Y.ToString();
+
+				 //обработка кнопок первого лифта
+				 if (CallCar[0] == 1) button9->BackColor = Color::IndianRed;
+				 else button9->BackColor = Color::LightGray;
+				 if (CallCar[1] == 1) button8->BackColor = Color::IndianRed;
+				 else button8->BackColor = Color::LightGray;
+				 if (CallCar[2] == 1) button7->BackColor = Color::IndianRed;
+				 else button7->BackColor = Color::LightGray;
+				 if (CallCar[3] == 1) button6->BackColor = Color::IndianRed;
+				 else button6->BackColor = Color::LightGray;
+				 if (CallCar[4] == 1) button5->BackColor = Color::IndianRed;
+				 else button5->BackColor = Color::LightGray;
+				 if (CallCar[5] == 1) button4->BackColor = Color::IndianRed;
+				 else button4->BackColor = Color::LightGray;
+				 if (CallCar[6] == 1) button3->BackColor = Color::IndianRed;
+				 else button3->BackColor = Color::LightGray;
+				 if (CallCar[7] == 1) button2->BackColor = Color::IndianRed;
+				 else button2->BackColor = Color::LightGray;
+				 if (CallCar[8] == 1) button1->BackColor = Color::IndianRed;
+				 else button1->BackColor = Color::LightGray;
+
+				 //обработка кнопок второго лифта
+				 if (CallCar2[0] == 1) button10->BackColor = Color::IndianRed;
+				 else button10->BackColor = Color::LightGray;
+				 if (CallCar2[1] == 1) button27->BackColor = Color::IndianRed;
+				 else button27->BackColor = Color::LightGray;
+				 if (CallCar2[2] == 1) button28->BackColor = Color::IndianRed;
+				 else button28->BackColor = Color::LightGray;
+				 if (CallCar2[3] == 1) button29->BackColor = Color::IndianRed;
+				 else button29->BackColor = Color::LightGray;
+				 if (CallCar2[4] == 1) button30->BackColor = Color::IndianRed;
+				 else button30->BackColor = Color::LightGray;
+				 if (CallCar2[5] == 1) button31->BackColor = Color::IndianRed;
+				 else button31->BackColor = Color::LightGray;
+				 if (CallCar2[6] == 1) button32->BackColor = Color::IndianRed;
+				 else button32->BackColor = Color::LightGray;
+				 if (CallCar2[7] == 1) button33->BackColor = Color::IndianRed;
+				 else button33->BackColor = Color::LightGray;
+				 if (CallCar2[8] == 1) button34->BackColor = Color::IndianRed;
+				 else button34->BackColor = Color::LightGray;
+
+				 //обработка кнопок вызова вверх
+				 if (CallUp[0] == 1) button26->BackColor = Color::IndianRed;
+				 else button26->BackColor = Color::White;
+				 if (CallUp[1] == 1) button24->BackColor = Color::IndianRed;
+				 else button24->BackColor = Color::White;
+				 if (CallUp[2] == 1) button22->BackColor = Color::IndianRed;
+				 else button22->BackColor = Color::White;
+				 if (CallUp[3] == 1) button20->BackColor = Color::IndianRed;
+				 else button20->BackColor = Color::White;
+				 if (CallUp[4] == 1) button18->BackColor = Color::IndianRed;
+				 else button18->BackColor = Color::White;
+				 if (CallUp[5] == 1) button16->BackColor = Color::IndianRed;
+				 else button16->BackColor = Color::White;
+				 if (CallUp[6] == 1) button14->BackColor = Color::IndianRed;
+				 else button14->BackColor = Color::White;
+				 if (CallUp[7] == 1) button12->BackColor = Color::IndianRed;
+				 else button12->BackColor = Color::White;
+
+				 //обработка кнопок вызова вниз
+				 if (CallDown[8] == 1) button11->BackColor = Color::IndianRed;
+				 else button11->BackColor = Color::White;
+				 if (CallDown[1] == 1) button25->BackColor = Color::IndianRed;
+				 else button25->BackColor = Color::White;
+				 if (CallDown[2] == 1) button23->BackColor = Color::IndianRed;
+				 else button23->BackColor = Color::White;
+				 if (CallDown[3] == 1) button21->BackColor = Color::IndianRed;
+				 else button21->BackColor = Color::White;
+				 if (CallDown[4] == 1) button19->BackColor = Color::IndianRed;
+				 else button19->BackColor = Color::White;
+				 if (CallDown[5] == 1) button17->BackColor = Color::IndianRed;
+				 else button17->BackColor = Color::White;
+				 if (CallDown[6] == 1) button15->BackColor = Color::IndianRed;
+				 else button15->BackColor = Color::White;
+				 if (CallDown[7] == 1) button13->BackColor = Color::IndianRed;
+				 else button13->BackColor = Color::White;
+
+				 //обработка чекбоксов
+				 if (Passengers[0].State == 1) this->checkBox1->Checked = true;
+				 else this->checkBox1->Checked = false;
+				 if (Passengers[1].State == 1) this->checkBox2->Checked = true;
+				 else this->checkBox2->Checked = false;
+				 if (Passengers[2].State == 1) this->checkBox3->Checked = true;
+				 else this->checkBox3->Checked = false;
+				 if (Passengers[3].State == 1) this->checkBox4->Checked = true;
+				 else this->checkBox4->Checked = false;
+				 if (Passengers[4].State == 1) this->checkBox5->Checked = true;
+				 else this->checkBox5->Checked = false;
+				 if (Passengers[5].State == 1) this->checkBox6->Checked = true;
+				 else this->checkBox6->Checked = false;
+				 if (Passengers[6].State == 1) this->checkBox7->Checked = true;
+				 else this->checkBox7->Checked = false;
+				 if (Passengers[7].State == 1) this->checkBox8->Checked = true;
+				 else this->checkBox8->Checked = false;
+				 if (Passengers[8].State == 1) this->checkBox9->Checked = true;
+				 else this->checkBox9->Checked = false;
+				 if (Passengers[9].State == 1) this->checkBox10->Checked = true;
+				 else this->checkBox10->Checked = false;
+				 if (Passengers[10].State == 1) this->checkBox11->Checked = true;
+				 else this->checkBox11->Checked = false;
+				 if (Passengers[11].State == 1) this->checkBox12->Checked = true;
+				 else this->checkBox12->Checked = false;
+				 if (Passengers[12].State == 1) this->checkBox13->Checked = true;
+				 else this->checkBox13->Checked = false;
+				 if (Passengers[13].State == 1) this->checkBox14->Checked = true;
+				 else this->checkBox14->Checked = false;
+				 if (Passengers[14].State == 1) this->checkBox15->Checked = true;
+				 else this->checkBox15->Checked = false;
+				 if (Passengers[15].State == 1) this->checkBox16->Checked = true;
+				 else this->checkBox16->Checked = false;
+				 if (Passengers[16].State == 1) this->checkBox17->Checked = true;
+				 else this->checkBox17->Checked = false;
+				 if (Passengers[17].State == 1) this->checkBox18->Checked = true;
+				 else this->checkBox18->Checked = false;
+				 if (Passengers[18].State == 1) this->checkBox19->Checked = true;
+				 else this->checkBox19->Checked = false;
+				 if (Passengers[19].State == 1) this->checkBox20->Checked = true;
+				 else this->checkBox20->Checked = false;
+				 if (Passengers[20].State == 1) this->checkBox21->Checked = true;
+				 else this->checkBox21->Checked = false;
+				 if (Passengers[21].State == 1) this->checkBox22->Checked = true;
+				 else this->checkBox22->Checked = false;
+				 if (Passengers[22].State == 1) this->checkBox23->Checked = true;
+				 else this->checkBox23->Checked = false;
+				 if (Passengers[23].State == 1) this->checkBox24->Checked = true;
+				 else this->checkBox24->Checked = false;
+				 if (Passengers[24].State == 1) this->checkBox25->Checked = true;
+				 else this->checkBox25->Checked = false;
+				 if (Passengers[25].State == 1) this->checkBox26->Checked = true;
+				 else this->checkBox26->Checked = false;
+				 if (Passengers[26].State == 1) this->checkBox27->Checked = true;
+				 else this->checkBox27->Checked = false;
+				 if (Passengers[27].State == 1) this->checkBox28->Checked = true;
+				 else this->checkBox28->Checked = false;
+				 if (Passengers[28].State == 1) this->checkBox29->Checked = true;
+				 else this->checkBox29->Checked = false;
+				 if (Passengers[29].State == 1) this->checkBox30->Checked = true;
+				 else this->checkBox30->Checked = false;
+				 if (Passengers[30].State == 1) this->checkBox31->Checked = true;
+				 else this->checkBox31->Checked = false;
+				 if (Passengers[31].State == 1) this->checkBox32->Checked = true;
+				 else this->checkBox32->Checked = false;
+				 if (Passengers[32].State == 1) this->checkBox33->Checked = true;
+				 else this->checkBox33->Checked = false;
+				 if (Passengers[33].State == 1) this->checkBox34->Checked = true;
+				 else this->checkBox34->Checked = false;
+				 if (Passengers[34].State == 1) this->checkBox35->Checked = true;
+				 else this->checkBox35->Checked = false;
+				 if (Passengers[35].State == 1) this->checkBox36->Checked = true;
+				 else this->checkBox36->Checked = false;
+				 if (Passengers[36].State == 1) this->checkBox37->Checked = true;
+				 else this->checkBox37->Checked = false;
+				 if (Passengers[37].State == 1) this->checkBox38->Checked = true;
+				 else this->checkBox38->Checked = false;
+				 if (Passengers[38].State == 1) this->checkBox39->Checked = true;
+				 else this->checkBox39->Checked = false;
+				 if (Passengers[39].State == 1) this->checkBox40->Checked = true;
+				 else this->checkBox40->Checked = false;
+				 if (Passengers[40].State == 1) this->checkBox41->Checked = true;
+				 else this->checkBox41->Checked = false;
+				 if (Passengers[41].State == 1) this->checkBox42->Checked = true;
+				 else this->checkBox42->Checked = false;
+				 if (Passengers[42].State == 1) this->checkBox43->Checked = true;
+				 else this->checkBox43->Checked = false;
+				 if (Passengers[43].State == 1) this->checkBox44->Checked = true;
+				 else this->checkBox44->Checked = false;
+				 if (Passengers[44].State == 1) this->checkBox45->Checked = true;
+				 else this->checkBox45->Checked = false;
+				 if (Passengers[45].State == 1) this->checkBox46->Checked = true;
+				 else this->checkBox46->Checked = false;
+				 if (Passengers[46].State == 1) this->checkBox47->Checked = true;
+				 else this->checkBox47->Checked = false;
+				 if (Passengers[47].State == 1) this->checkBox48->Checked = true;
+				 else this->checkBox48->Checked = false;
+				 if (Passengers[48].State == 1) this->checkBox49->Checked = true;
+				 else this->checkBox49->Checked = false;
+				 if (Passengers[49].State == 1) this->checkBox50->Checked = true;
+				 else this->checkBox50->Checked = false;
+				 if (Passengers[50].State == 1) this->checkBox51->Checked = true;
+				 else this->checkBox51->Checked = false;
+				 if (Passengers[51].State == 1) this->checkBox52->Checked = true;
+				 else this->checkBox52->Checked = false;
+				 if (Passengers[52].State == 1) this->checkBox53->Checked = true;
+				 else this->checkBox53->Checked = false;
+				 if (Passengers[53].State == 1) this->checkBox54->Checked = true;
+				 else this->checkBox54->Checked = false;
+				 if (Passengers[54].State == 1) this->checkBox55->Checked = true;
+				 else this->checkBox55->Checked = false;
+				 if (Passengers[55].State == 1) this->checkBox56->Checked = true;
+				 else this->checkBox56->Checked = false;
+				 if (Passengers[56].State == 1) this->checkBox57->Checked = true;
+				 else this->checkBox57->Checked = false;
+				 if (Passengers[57].State == 1) this->checkBox58->Checked = true;
+				 else this->checkBox58->Checked = false;
+				 if (Passengers[58].State == 1) this->checkBox59->Checked = true;
+				 else this->checkBox59->Checked = false;
+				 if (Passengers[59].State == 1) this->checkBox60->Checked = true;
+				 else this->checkBox60->Checked = false;
+				 if (Passengers[60].State == 1) this->checkBox61->Checked = true;
+				 else this->checkBox61->Checked = false;
+				 if (Passengers[61].State == 1) this->checkBox62->Checked = true;
+				 else this->checkBox62->Checked = false;
+				 if (Passengers[62].State == 1) this->checkBox63->Checked = true;
+				 else this->checkBox63->Checked = false;
+
+				 this->Invalidate();
+			 }
+
 	private: System::Void button36_Click(System::Object^  sender, System::EventArgs^  e) {
 		sw->Close();
 		Application::Exit();
