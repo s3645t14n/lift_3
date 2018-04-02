@@ -209,10 +209,11 @@ namespace lift_3 {
 	private: System::Windows::Forms::CheckBox^  checkBox62;
 	private: System::Windows::Forms::CheckBox^  checkBox63;
 	private: System::Windows::Forms::TextBox^  textBox26;
-
-
 	private: System::Windows::Forms::TextBox^  textBox27;
-private: System::Windows::Forms::Button^  button36;
+	private: System::Windows::Forms::Button^  button36;
+private: System::Windows::Forms::Button^  button37;
+private: System::Windows::Forms::TextBox^  textBox19;
+private: System::Windows::Forms::Label^  label22;
 	private: System::Windows::Forms::Button^  button9;
 	public:
 	public:
@@ -411,12 +412,15 @@ private: System::Windows::Forms::Button^  button36;
 			this->textBox26 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox27 = (gcnew System::Windows::Forms::TextBox());
 			this->button36 = (gcnew System::Windows::Forms::Button());
+			this->button37 = (gcnew System::Windows::Forms::Button());
+			this->textBox19 = (gcnew System::Windows::Forms::TextBox());
+			this->label22 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
 			this->button1->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button1->Location = System::Drawing::Point(445, 127);
+			this->button1->Location = System::Drawing::Point(470, 170);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(25, 23);
 			this->button1->TabIndex = 0;
@@ -427,7 +431,7 @@ private: System::Windows::Forms::Button^  button36;
 			// button2
 			// 
 			this->button2->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button2->Location = System::Drawing::Point(414, 127);
+			this->button2->Location = System::Drawing::Point(439, 170);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(25, 23);
 			this->button2->TabIndex = 1;
@@ -438,7 +442,7 @@ private: System::Windows::Forms::Button^  button36;
 			// button3
 			// 
 			this->button3->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button3->Location = System::Drawing::Point(445, 156);
+			this->button3->Location = System::Drawing::Point(470, 199);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(25, 23);
 			this->button3->TabIndex = 2;
@@ -449,7 +453,7 @@ private: System::Windows::Forms::Button^  button36;
 			// button4
 			// 
 			this->button4->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button4->Location = System::Drawing::Point(414, 156);
+			this->button4->Location = System::Drawing::Point(439, 199);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(25, 23);
 			this->button4->TabIndex = 3;
@@ -460,7 +464,7 @@ private: System::Windows::Forms::Button^  button36;
 			// button5
 			// 
 			this->button5->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button5->Location = System::Drawing::Point(445, 186);
+			this->button5->Location = System::Drawing::Point(470, 229);
 			this->button5->Name = L"button5";
 			this->button5->Size = System::Drawing::Size(25, 23);
 			this->button5->TabIndex = 4;
@@ -471,7 +475,7 @@ private: System::Windows::Forms::Button^  button36;
 			// button6
 			// 
 			this->button6->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button6->Location = System::Drawing::Point(414, 186);
+			this->button6->Location = System::Drawing::Point(439, 229);
 			this->button6->Name = L"button6";
 			this->button6->Size = System::Drawing::Size(25, 23);
 			this->button6->TabIndex = 5;
@@ -482,7 +486,7 @@ private: System::Windows::Forms::Button^  button36;
 			// button7
 			// 
 			this->button7->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button7->Location = System::Drawing::Point(445, 216);
+			this->button7->Location = System::Drawing::Point(470, 259);
 			this->button7->Name = L"button7";
 			this->button7->Size = System::Drawing::Size(25, 23);
 			this->button7->TabIndex = 6;
@@ -493,7 +497,7 @@ private: System::Windows::Forms::Button^  button36;
 			// button8
 			// 
 			this->button8->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button8->Location = System::Drawing::Point(414, 216);
+			this->button8->Location = System::Drawing::Point(439, 259);
 			this->button8->Name = L"button8";
 			this->button8->Size = System::Drawing::Size(25, 23);
 			this->button8->TabIndex = 7;
@@ -504,7 +508,7 @@ private: System::Windows::Forms::Button^  button36;
 			// button9
 			// 
 			this->button9->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button9->Location = System::Drawing::Point(430, 245);
+			this->button9->Location = System::Drawing::Point(455, 288);
 			this->button9->Name = L"button9";
 			this->button9->Size = System::Drawing::Size(25, 23);
 			this->button9->TabIndex = 8;
@@ -514,56 +518,56 @@ private: System::Windows::Forms::Button^  button36;
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(476, 114);
+			this->textBox1->Location = System::Drawing::Point(501, 157);
 			this->textBox1->Name = L"textBox1";
 			this->textBox1->Size = System::Drawing::Size(33, 20);
 			this->textBox1->TabIndex = 9;
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(476, 141);
+			this->textBox2->Location = System::Drawing::Point(501, 184);
 			this->textBox2->Name = L"textBox2";
 			this->textBox2->Size = System::Drawing::Size(33, 20);
 			this->textBox2->TabIndex = 10;
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(476, 168);
+			this->textBox3->Location = System::Drawing::Point(501, 211);
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(33, 20);
 			this->textBox3->TabIndex = 11;
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(430, 101);
+			this->textBox4->Location = System::Drawing::Point(455, 144);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(25, 20);
 			this->textBox4->TabIndex = 12;
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(476, 222);
+			this->textBox5->Location = System::Drawing::Point(501, 265);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(33, 20);
 			this->textBox5->TabIndex = 13;
 			// 
 			// textBox6
 			// 
-			this->textBox6->Location = System::Drawing::Point(476, 249);
+			this->textBox6->Location = System::Drawing::Point(501, 292);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(33, 20);
 			this->textBox6->TabIndex = 14;
 			// 
 			// textBox7
 			// 
-			this->textBox7->Location = System::Drawing::Point(476, 276);
+			this->textBox7->Location = System::Drawing::Point(501, 319);
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(33, 20);
 			this->textBox7->TabIndex = 15;
 			// 
 			// textBox8
 			// 
-			this->textBox8->Location = System::Drawing::Point(476, 303);
+			this->textBox8->Location = System::Drawing::Point(501, 346);
 			this->textBox8->Name = L"textBox8";
 			this->textBox8->Size = System::Drawing::Size(33, 20);
 			this->textBox8->TabIndex = 16;
@@ -571,7 +575,7 @@ private: System::Windows::Forms::Button^  button36;
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(515, 114);
+			this->label1->Location = System::Drawing::Point(540, 157);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(75, 13);
 			this->label1->TabIndex = 17;
@@ -580,7 +584,7 @@ private: System::Windows::Forms::Button^  button36;
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(515, 141);
+			this->label2->Location = System::Drawing::Point(540, 184);
 			this->label2->Name = L"label2";
 			this->label2->Size = System::Drawing::Size(78, 13);
 			this->label2->TabIndex = 18;
@@ -589,7 +593,7 @@ private: System::Windows::Forms::Button^  button36;
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(515, 168);
+			this->label3->Location = System::Drawing::Point(540, 211);
 			this->label3->Name = L"label3";
 			this->label3->Size = System::Drawing::Size(55, 13);
 			this->label3->TabIndex = 19;
@@ -598,7 +602,7 @@ private: System::Windows::Forms::Button^  button36;
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(427, 85);
+			this->label4->Location = System::Drawing::Point(452, 128);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(33, 13);
 			this->label4->TabIndex = 20;
@@ -607,7 +611,7 @@ private: System::Windows::Forms::Button^  button36;
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(515, 223);
+			this->label5->Location = System::Drawing::Point(540, 266);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(61, 13);
 			this->label5->TabIndex = 21;
@@ -616,7 +620,7 @@ private: System::Windows::Forms::Button^  button36;
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(515, 250);
+			this->label6->Location = System::Drawing::Point(540, 293);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(80, 13);
 			this->label6->TabIndex = 22;
@@ -625,7 +629,7 @@ private: System::Windows::Forms::Button^  button36;
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(515, 276);
+			this->label7->Location = System::Drawing::Point(540, 319);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(58, 13);
 			this->label7->TabIndex = 23;
@@ -634,7 +638,7 @@ private: System::Windows::Forms::Button^  button36;
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(515, 303);
+			this->label8->Location = System::Drawing::Point(540, 346);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(49, 13);
 			this->label8->TabIndex = 24;
@@ -834,70 +838,70 @@ private: System::Windows::Forms::Button^  button36;
 			// 
 			// textBox18
 			// 
-			this->textBox18->Location = System::Drawing::Point(476, 194);
+			this->textBox18->Location = System::Drawing::Point(501, 237);
 			this->textBox18->Name = L"textBox18";
 			this->textBox18->Size = System::Drawing::Size(33, 20);
 			this->textBox18->TabIndex = 51;
 			// 
 			// textBox9
 			// 
-			this->textBox9->Location = System::Drawing::Point(687, 194);
+			this->textBox9->Location = System::Drawing::Point(712, 237);
 			this->textBox9->Name = L"textBox9";
 			this->textBox9->Size = System::Drawing::Size(35, 20);
 			this->textBox9->TabIndex = 68;
 			// 
 			// textBox10
 			// 
-			this->textBox10->Location = System::Drawing::Point(686, 304);
+			this->textBox10->Location = System::Drawing::Point(711, 347);
 			this->textBox10->Name = L"textBox10";
 			this->textBox10->Size = System::Drawing::Size(35, 20);
 			this->textBox10->TabIndex = 59;
 			// 
 			// textBox11
 			// 
-			this->textBox11->Location = System::Drawing::Point(686, 277);
+			this->textBox11->Location = System::Drawing::Point(711, 320);
 			this->textBox11->Name = L"textBox11";
 			this->textBox11->Size = System::Drawing::Size(35, 20);
 			this->textBox11->TabIndex = 58;
 			// 
 			// textBox12
 			// 
-			this->textBox12->Location = System::Drawing::Point(686, 250);
+			this->textBox12->Location = System::Drawing::Point(711, 293);
 			this->textBox12->Name = L"textBox12";
 			this->textBox12->Size = System::Drawing::Size(35, 20);
 			this->textBox12->TabIndex = 57;
 			// 
 			// textBox13
 			// 
-			this->textBox13->Location = System::Drawing::Point(686, 223);
+			this->textBox13->Location = System::Drawing::Point(711, 266);
 			this->textBox13->Name = L"textBox13";
 			this->textBox13->Size = System::Drawing::Size(35, 20);
 			this->textBox13->TabIndex = 56;
 			// 
 			// textBox14
 			// 
-			this->textBox14->Location = System::Drawing::Point(640, 101);
+			this->textBox14->Location = System::Drawing::Point(665, 144);
 			this->textBox14->Name = L"textBox14";
 			this->textBox14->Size = System::Drawing::Size(25, 20);
 			this->textBox14->TabIndex = 55;
 			// 
 			// textBox15
 			// 
-			this->textBox15->Location = System::Drawing::Point(686, 169);
+			this->textBox15->Location = System::Drawing::Point(711, 212);
 			this->textBox15->Name = L"textBox15";
 			this->textBox15->Size = System::Drawing::Size(35, 20);
 			this->textBox15->TabIndex = 54;
 			// 
 			// textBox16
 			// 
-			this->textBox16->Location = System::Drawing::Point(686, 142);
+			this->textBox16->Location = System::Drawing::Point(711, 185);
 			this->textBox16->Name = L"textBox16";
 			this->textBox16->Size = System::Drawing::Size(35, 20);
 			this->textBox16->TabIndex = 53;
 			// 
 			// textBox17
 			// 
-			this->textBox17->Location = System::Drawing::Point(686, 114);
+			this->textBox17->Location = System::Drawing::Point(711, 157);
 			this->textBox17->Name = L"textBox17";
 			this->textBox17->Size = System::Drawing::Size(35, 20);
 			this->textBox17->TabIndex = 52;
@@ -905,7 +909,7 @@ private: System::Windows::Forms::Button^  button36;
 			// button10
 			// 
 			this->button10->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button10->Location = System::Drawing::Point(640, 244);
+			this->button10->Location = System::Drawing::Point(665, 287);
 			this->button10->Name = L"button10";
 			this->button10->Size = System::Drawing::Size(25, 23);
 			this->button10->TabIndex = 77;
@@ -916,7 +920,7 @@ private: System::Windows::Forms::Button^  button36;
 			// button27
 			// 
 			this->button27->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button27->Location = System::Drawing::Point(624, 215);
+			this->button27->Location = System::Drawing::Point(649, 258);
 			this->button27->Name = L"button27";
 			this->button27->Size = System::Drawing::Size(25, 23);
 			this->button27->TabIndex = 76;
@@ -927,7 +931,7 @@ private: System::Windows::Forms::Button^  button36;
 			// button28
 			// 
 			this->button28->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button28->Location = System::Drawing::Point(655, 215);
+			this->button28->Location = System::Drawing::Point(680, 258);
 			this->button28->Name = L"button28";
 			this->button28->Size = System::Drawing::Size(25, 23);
 			this->button28->TabIndex = 75;
@@ -938,7 +942,7 @@ private: System::Windows::Forms::Button^  button36;
 			// button29
 			// 
 			this->button29->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button29->Location = System::Drawing::Point(624, 184);
+			this->button29->Location = System::Drawing::Point(649, 227);
 			this->button29->Name = L"button29";
 			this->button29->Size = System::Drawing::Size(25, 23);
 			this->button29->TabIndex = 74;
@@ -949,7 +953,7 @@ private: System::Windows::Forms::Button^  button36;
 			// button30
 			// 
 			this->button30->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button30->Location = System::Drawing::Point(655, 184);
+			this->button30->Location = System::Drawing::Point(680, 227);
 			this->button30->Name = L"button30";
 			this->button30->Size = System::Drawing::Size(25, 23);
 			this->button30->TabIndex = 73;
@@ -960,7 +964,7 @@ private: System::Windows::Forms::Button^  button36;
 			// button31
 			// 
 			this->button31->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button31->Location = System::Drawing::Point(624, 155);
+			this->button31->Location = System::Drawing::Point(649, 198);
 			this->button31->Name = L"button31";
 			this->button31->Size = System::Drawing::Size(25, 23);
 			this->button31->TabIndex = 72;
@@ -971,7 +975,7 @@ private: System::Windows::Forms::Button^  button36;
 			// button32
 			// 
 			this->button32->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button32->Location = System::Drawing::Point(655, 155);
+			this->button32->Location = System::Drawing::Point(680, 198);
 			this->button32->Name = L"button32";
 			this->button32->Size = System::Drawing::Size(25, 23);
 			this->button32->TabIndex = 71;
@@ -982,7 +986,7 @@ private: System::Windows::Forms::Button^  button36;
 			// button33
 			// 
 			this->button33->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button33->Location = System::Drawing::Point(624, 128);
+			this->button33->Location = System::Drawing::Point(649, 171);
 			this->button33->Name = L"button33";
 			this->button33->Size = System::Drawing::Size(25, 23);
 			this->button33->TabIndex = 70;
@@ -993,7 +997,7 @@ private: System::Windows::Forms::Button^  button36;
 			// button34
 			// 
 			this->button34->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->button34->Location = System::Drawing::Point(655, 127);
+			this->button34->Location = System::Drawing::Point(680, 170);
 			this->button34->Name = L"button34";
 			this->button34->Size = System::Drawing::Size(25, 23);
 			this->button34->TabIndex = 69;
@@ -1003,7 +1007,7 @@ private: System::Windows::Forms::Button^  button36;
 			// 
 			// button35
 			// 
-			this->button35->Location = System::Drawing::Point(543, 390);
+			this->button35->Location = System::Drawing::Point(560, 27);
 			this->button35->Name = L"button35";
 			this->button35->Size = System::Drawing::Size(145, 42);
 			this->button35->TabIndex = 78;
@@ -1013,21 +1017,21 @@ private: System::Windows::Forms::Button^  button36;
 			// 
 			// textBox21
 			// 
-			this->textBox21->Location = System::Drawing::Point(476, 329);
+			this->textBox21->Location = System::Drawing::Point(501, 372);
 			this->textBox21->Name = L"textBox21";
 			this->textBox21->Size = System::Drawing::Size(33, 20);
 			this->textBox21->TabIndex = 81;
 			// 
 			// textBox22
 			// 
-			this->textBox22->Location = System::Drawing::Point(687, 329);
+			this->textBox22->Location = System::Drawing::Point(712, 372);
 			this->textBox22->Name = L"textBox22";
 			this->textBox22->Size = System::Drawing::Size(34, 20);
 			this->textBox22->TabIndex = 82;
 			// 
 			// textBox23
 			// 
-			this->textBox23->Location = System::Drawing::Point(553, 435);
+			this->textBox23->Location = System::Drawing::Point(570, 72);
 			this->textBox23->Name = L"textBox23";
 			this->textBox23->Size = System::Drawing::Size(66, 20);
 			this->textBox23->TabIndex = 83;
@@ -1035,7 +1039,7 @@ private: System::Windows::Forms::Button^  button36;
 			// label17
 			// 
 			this->label17->AutoSize = true;
-			this->label17->Location = System::Drawing::Point(515, 332);
+			this->label17->Location = System::Drawing::Point(540, 375);
 			this->label17->Name = L"label17";
 			this->label17->Size = System::Drawing::Size(55, 13);
 			this->label17->TabIndex = 84;
@@ -1044,7 +1048,7 @@ private: System::Windows::Forms::Button^  button36;
 			// label19
 			// 
 			this->label19->AutoSize = true;
-			this->label19->Location = System::Drawing::Point(625, 438);
+			this->label19->Location = System::Drawing::Point(642, 75);
 			this->label19->Name = L"label19";
 			this->label19->Size = System::Drawing::Size(55, 13);
 			this->label19->TabIndex = 86;
@@ -1053,7 +1057,7 @@ private: System::Windows::Forms::Button^  button36;
 			// label20
 			// 
 			this->label20->AutoSize = true;
-			this->label20->Location = System::Drawing::Point(515, 197);
+			this->label20->Location = System::Drawing::Point(540, 240);
 			this->label20->Name = L"label20";
 			this->label20->Size = System::Drawing::Size(45, 13);
 			this->label20->TabIndex = 87;
@@ -1062,7 +1066,7 @@ private: System::Windows::Forms::Button^  button36;
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(728, 197);
+			this->label9->Location = System::Drawing::Point(753, 240);
 			this->label9->Name = L"label9";
 			this->label9->Size = System::Drawing::Size(45, 13);
 			this->label9->TabIndex = 97;
@@ -1071,7 +1075,7 @@ private: System::Windows::Forms::Button^  button36;
 			// label10
 			// 
 			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(727, 332);
+			this->label10->Location = System::Drawing::Point(752, 375);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(55, 13);
 			this->label10->TabIndex = 96;
@@ -1080,7 +1084,7 @@ private: System::Windows::Forms::Button^  button36;
 			// label11
 			// 
 			this->label11->AutoSize = true;
-			this->label11->Location = System::Drawing::Point(727, 303);
+			this->label11->Location = System::Drawing::Point(752, 346);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(49, 13);
 			this->label11->TabIndex = 95;
@@ -1089,7 +1093,7 @@ private: System::Windows::Forms::Button^  button36;
 			// label12
 			// 
 			this->label12->AutoSize = true;
-			this->label12->Location = System::Drawing::Point(727, 276);
+			this->label12->Location = System::Drawing::Point(752, 319);
 			this->label12->Name = L"label12";
 			this->label12->Size = System::Drawing::Size(58, 13);
 			this->label12->TabIndex = 94;
@@ -1098,7 +1102,7 @@ private: System::Windows::Forms::Button^  button36;
 			// label13
 			// 
 			this->label13->AutoSize = true;
-			this->label13->Location = System::Drawing::Point(727, 250);
+			this->label13->Location = System::Drawing::Point(752, 293);
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(80, 13);
 			this->label13->TabIndex = 93;
@@ -1107,7 +1111,7 @@ private: System::Windows::Forms::Button^  button36;
 			// label14
 			// 
 			this->label14->AutoSize = true;
-			this->label14->Location = System::Drawing::Point(727, 223);
+			this->label14->Location = System::Drawing::Point(752, 266);
 			this->label14->Name = L"label14";
 			this->label14->Size = System::Drawing::Size(61, 13);
 			this->label14->TabIndex = 92;
@@ -1116,7 +1120,7 @@ private: System::Windows::Forms::Button^  button36;
 			// label15
 			// 
 			this->label15->AutoSize = true;
-			this->label15->Location = System::Drawing::Point(637, 85);
+			this->label15->Location = System::Drawing::Point(662, 128);
 			this->label15->Name = L"label15";
 			this->label15->Size = System::Drawing::Size(33, 13);
 			this->label15->TabIndex = 91;
@@ -1125,7 +1129,7 @@ private: System::Windows::Forms::Button^  button36;
 			// label16
 			// 
 			this->label16->AutoSize = true;
-			this->label16->Location = System::Drawing::Point(728, 172);
+			this->label16->Location = System::Drawing::Point(753, 215);
 			this->label16->Name = L"label16";
 			this->label16->Size = System::Drawing::Size(55, 13);
 			this->label16->TabIndex = 90;
@@ -1134,7 +1138,7 @@ private: System::Windows::Forms::Button^  button36;
 			// label18
 			// 
 			this->label18->AutoSize = true;
-			this->label18->Location = System::Drawing::Point(728, 145);
+			this->label18->Location = System::Drawing::Point(753, 188);
 			this->label18->Name = L"label18";
 			this->label18->Size = System::Drawing::Size(78, 13);
 			this->label18->TabIndex = 89;
@@ -1143,7 +1147,7 @@ private: System::Windows::Forms::Button^  button36;
 			// label21
 			// 
 			this->label21->AutoSize = true;
-			this->label21->Location = System::Drawing::Point(727, 113);
+			this->label21->Location = System::Drawing::Point(752, 156);
 			this->label21->Name = L"label21";
 			this->label21->Size = System::Drawing::Size(75, 13);
 			this->label21->TabIndex = 88;
@@ -1795,13 +1799,46 @@ private: System::Windows::Forms::Button^  button36;
 			// 
 			// button36
 			// 
-			this->button36->Location = System::Drawing::Point(694, 390);
+			this->button36->Location = System::Drawing::Point(681, 530);
 			this->button36->Name = L"button36";
-			this->button36->Size = System::Drawing::Size(75, 42);
+			this->button36->Size = System::Drawing::Size(145, 26);
 			this->button36->TabIndex = 168;
 			this->button36->Text = L"Сохранить лог и выйти";
 			this->button36->UseVisualStyleBackColor = true;
 			this->button36->Click += gcnew System::EventHandler(this, &MyForm::button36_Click);
+			// 
+			// button37
+			// 
+			this->button37->Location = System::Drawing::Point(711, 114);
+			this->button37->Name = L"button37";
+			this->button37->Size = System::Drawing::Size(122, 37);
+			this->button37->TabIndex = 169;
+			this->button37->Text = L"Включить лифт №2";
+			this->button37->UseVisualStyleBackColor = true;
+			this->button37->Click += gcnew System::EventHandler(this, &MyForm::button37_Click);
+			// 
+			// textBox19
+			// 
+			this->textBox19->BackColor = System::Drawing::SystemColors::Window;
+			this->textBox19->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->textBox19->Location = System::Drawing::Point(470, 448);
+			this->textBox19->Multiline = true;
+			this->textBox19->Name = L"textBox19";
+			this->textBox19->ReadOnly = true;
+			this->textBox19->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
+			this->textBox19->Size = System::Drawing::Size(357, 76);
+			this->textBox19->TabIndex = 170;
+			this->textBox19->WordWrap = false;
+			// 
+			// label22
+			// 
+			this->label22->AutoSize = true;
+			this->label22->CausesValidation = false;
+			this->label22->Location = System::Drawing::Point(467, 427);
+			this->label22->Name = L"label22";
+			this->label22->Size = System::Drawing::Size(26, 13);
+			this->label22->TabIndex = 171;
+			this->label22->Text = L"Лог";
 			// 
 			// MyForm
 			// 
@@ -1809,7 +1846,10 @@ private: System::Windows::Forms::Button^  button36;
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->BackgroundImage = (cli::safe_cast<System::Drawing::Image^>(resources->GetObject(L"$this.BackgroundImage")));
 			this->BackgroundImageLayout = System::Windows::Forms::ImageLayout::None;
-			this->ClientSize = System::Drawing::Size(848, 604);
+			this->ClientSize = System::Drawing::Size(872, 604);
+			this->Controls->Add(this->label22);
+			this->Controls->Add(this->textBox19);
+			this->Controls->Add(this->button37);
 			this->Controls->Add(this->button36);
 			this->Controls->Add(this->textBox27);
 			this->Controls->Add(this->textBox26);
@@ -1969,21 +2009,16 @@ private: System::Windows::Forms::Button^  button36;
 #pragma endregion
 
 		//автомат решений 1 лифта
-		void StateDefine()
-		{
-			switch (State)
-			{
+		void StateDefine() {
+			switch (State) {
 			case 0:
 				Query = 0;
-				for (i = 0; i < 9; i++)
-				{
-					if ((CallCar[i] == 1 || CallUp[i] == 1 || CallDown[i] == 1) && i < Floor)
-					{
+				for (i = 0; i < 9; i++) {
+					if ((CallCar[i] == 1 || CallUp[i] == 1 || CallDown[i] == 1) && i < Floor) {
 						Query = -1;
 						break;
 					}
-					if ((CallCar[i] == 1 || CallUp[i] == 1 || CallDown[i] == 1) && i > Floor)
-					{
+					if ((CallCar[i] == 1 || CallUp[i] == 1 || CallDown[i] == 1) && i > Floor) {
 						Query = 1;
 						break;
 					}
@@ -2071,19 +2106,15 @@ private: System::Windows::Forms::Button^  button36;
 		//автомат решений 2 лифта
 		void StateDefine2()
 		{
-			switch (State2)
-			{
+			switch (State2) {
 			case 0:
 				Query2 = 0;
-				for (i2 = 0; i2 < 9; i2++)
-				{
-					if ((CallCar2[i2] == 1 || CallUp[i2] == 1 || CallDown[i2] == 1) && i2 < Floor2)
-					{
+				for (i2 = 0; i2 < 9; i2++) {
+					if ((CallCar2[i2] == 1 || CallUp[i2] == 1 || CallDown[i2] == 1) && i2 < Floor2) {
 						Query2 = -1;
 						break;
 					}
-					if ((CallCar2[i2] == 1 || CallUp[i2] == 1 || CallDown[i2] == 1) && i2 > Floor2)
-					{
+					if ((CallCar2[i2] == 1 || CallUp[i2] == 1 || CallDown[i2] == 1) && i2 > Floor2) {
 						Query2 = 1;
 						break;
 					}
@@ -2173,13 +2204,10 @@ private: System::Windows::Forms::Button^  button36;
 		this->Paint += gcnew PaintEventHandler(this, &MyForm::MyForm_Paint);
 		this->Paint += gcnew PaintEventHandler(this, &MyForm::MyForm_Paint2);
 		Timer ^ timer1 = gcnew Timer(); //таймер первого лифта
-		Timer ^ timer2 = gcnew Timer(); //таймер второго лифта
 		Timer ^ timer0 = gcnew Timer(); //таймер интерфейса
 		timer1->Interval = TimerInterval1;
-		timer2->Interval = TimerInterval1;
 		timer0->Interval = 10;
 		timer1->Enabled = true;
-		timer2->Enabled = true;
 		timer0->Enabled = true;
 		for (i = 0; i < 63; i++) //инициализация структуры данных с пассажирами
 			Passengers[i].ID = i,
@@ -2188,7 +2216,6 @@ private: System::Windows::Forms::Button^  button36;
 			Passengers[i].OriginFloor = 0,
 			Passengers[i].DestinationFloor = 0;
 		timer1->Tick += gcnew EventHandler(this, &MyForm::timer1_Tick);
-		timer2->Tick += gcnew EventHandler(this, &MyForm::timer2_Tick);
 		timer0->Tick += gcnew EventHandler(this, &MyForm::timer0_Tick);
 	}
 
@@ -2245,6 +2272,9 @@ private: System::Windows::Forms::Button^  button36;
 				sw->Write(DateTime::Now);
 				sw->Write(" Лифт №1 остановился на этаже ");
 				sw->WriteLine(Floor.ToString());
+
+				this->textBox19->SelectedText = String::Concat("\r\n", DateTime::Now, " Лифт №1 остановился на этаже ", Floor.ToString());
+				this->textBox19->ScrollToCaret();
 			}
 		}
 
@@ -2269,6 +2299,9 @@ private: System::Windows::Forms::Button^  button36;
 					sw->Write(DateTime::Now);
 					sw->Write(" Пассажиров в лифте №1: ");
 					sw->WriteLine(PassengersInCar.ToString());
+
+					this->textBox19->SelectedText = String::Concat("\r\n", DateTime::Now, " Пассажир ", i.ToString(), " вышел из лифта №1 на этаже ", Floor.ToString(), "\r\nПассажиров в лифте №1: ", PassengersInCar.ToString());
+					this->textBox19->ScrollToCaret();
 				}
 
 		//вход пассажиров в лифт1
@@ -2289,6 +2322,9 @@ private: System::Windows::Forms::Button^  button36;
 					sw->Write(DateTime::Now);
 					sw->Write(" Пассажиров в лифте №1: ");
 					sw->WriteLine(PassengersInCar.ToString());
+
+					this->textBox19->SelectedText = String::Concat("\r\n", DateTime::Now, " Пассажир ", i.ToString(), " вошел в лифт №1 на этаже ", Floor.ToString(), "\r\nи вызвал лифт на этаж ", Passengers[i].DestinationFloor.ToString(), "\r\nПассажиров в лифте №1: ", PassengersInCar.ToString());
+					this->textBox19->ScrollToCaret();
 				}
 			}
 
@@ -2302,6 +2338,21 @@ private: System::Windows::Forms::Button^  button36;
 		e->Graphics->DrawImage(img, imgPoint)/*.BringToFront()*/;
 	}
 		 
+	//таймер второго лифта
+	private: System::Void button37_Click(System::Object^  sender, System::EventArgs^  e) {
+		button37->BackColor = Color::IndianRed;
+
+		Timer ^ timer2 = gcnew Timer(); //таймер второго лифта
+		timer2->Interval = TimerInterval1;
+		timer2->Enabled = true;
+		timer2->Tick += gcnew EventHandler(this, &MyForm::timer2_Tick);
+		sw->Write(DateTime::Now);
+		sw->WriteLine(" Запущен лифт №2.");
+
+		this->textBox19->SelectedText = String::Concat("\r\n", DateTime::Now, " Запущен лифт №2.");
+		this->textBox19->ScrollToCaret();
+	}
+
 	private: 
 		//обработка тика второго таймера - аналогично первой
 		System::Void timer2_Tick(System::Object^  sender, System::EventArgs^  e) {
@@ -2348,6 +2399,9 @@ private: System::Windows::Forms::Button^  button36;
 				sw->Write(DateTime::Now);
 				sw->Write(" Лифт №2 остановился на этаже ");
 				sw->WriteLine(Floor2.ToString());
+
+				this->textBox19->SelectedText = String::Concat("\r\n", DateTime::Now, " Лифт №2 остановился на этаже ", Floor2.ToString());
+				this->textBox19->ScrollToCaret();
 			}
 		}
 
@@ -2371,6 +2425,9 @@ private: System::Windows::Forms::Button^  button36;
 					sw->Write(DateTime::Now);
 					sw->Write(" Пассажиров в лифте №2: ");
 					sw->WriteLine(PassengersInCar2.ToString());
+
+					this->textBox19->SelectedText = String::Concat("\r\n", DateTime::Now, " Пассажир ", i.ToString(), " вышел из лифта №2 на этаже ", Floor2.ToString(), "\r\nПассажиров в лифте №2: ", PassengersInCar2.ToString());
+					this->textBox19->ScrollToCaret();
 				}
 
 		//вход пассажиров в лифт2
@@ -2391,6 +2448,9 @@ private: System::Windows::Forms::Button^  button36;
 					sw->Write(DateTime::Now);
 					sw->Write(" Пассажиров в лифте №2: ");
 					sw->WriteLine(PassengersInCar2.ToString());
+
+					this->textBox19->SelectedText = String::Concat("\r\n", DateTime::Now, " Пассажир ", i.ToString(), " вошел в лифт №2 на этаже ", Floor2.ToString(), "\r\nи вызвал лифт на этаж ", Passengers[i].DestinationFloor.ToString(), "\r\nПассажиров в лифте №2: ", PassengersInCar2.ToString());
+					this->textBox19->ScrollToCaret();
 				}
 			}
 
@@ -2594,6 +2654,7 @@ private: System::Windows::Forms::Button^  button36;
 			 //	this->textBox20->Text = RandFloor.ToString();
 			 //}
 
+			 //таймер обработки графического интерфейса
 			 private: System::Void timer0_Tick(System::Object^  sender, System::EventArgs^  e) {
 				 //обработка текстбоксов
 				 this->textBox1->Text = State.ToString();
@@ -2831,5 +2892,6 @@ private: System::Windows::Forms::Button^  button36;
 		sw->Close();
 		Application::Exit();
 	}
+
 };
 }
